@@ -18,7 +18,7 @@
       <div class="collapse navbar-collapse">
         <ul class="navbar-nav ml-auto">
           <% @user = User.find_by({ "id" => session["user_id"] }) %>
-          <% if @user != nill %>
+          <% if @user != nil %>
             <li class="nav-item">
               <span class="navbar-text">Welcome, <%= @user["username"] %></span>
             </li>

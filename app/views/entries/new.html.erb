@@ -1,22 +1,28 @@
 <h1>New Entry</h1>
 
-<form action="/entries" method="post">
+<form action="/entries" method="post" enctype="multipart/form-data">
   <input type="hidden" name="place_id" value="<%= params["place_id"] %>">
 
-  <p>
+  <div>
     <label for="title_input">Title</label>
     <input type="text" name="title" id="title_input">
-  </p>
+  </div>
 
-  <p>
+  <div>
     <label for="description_input">Description</label>
     <input type="text" name="description" id="description_input">
-  </p>
+  </div>
 
-  <p>
+  <div>
     <label for="occurred_on_input">Occurred On</label>
     <input type="date" name="occurred_on" id="occurred_on_input">
-  </p>
+  </div>
+
+  <div>
+    <label for="uploaded_image_input">Add an Image</label>
+    <input type="file" name="uploaded_image" id="uploaded_image_input" 
+           accept="image/png, image/jpg, image/jpeg, image/gif">
+  </div>
 
   <button>Save</button>
 </form>

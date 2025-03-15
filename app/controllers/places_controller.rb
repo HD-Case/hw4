@@ -1,6 +1,8 @@
 class PlacesController < ApplicationController
+  before_action :require_login, only: [:new, :create, :show]
 
   def index
+    @user = User.find_by({ "id" => session["user_id"] })
     @places = Place.all
   end
 

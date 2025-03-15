@@ -9,6 +9,9 @@
           <h5 class="card-title"><%= entry["title"] %></h5>
           <h6 class="card-subtitle mb-2 text-muted"><%= entry["occurred_on"] %></h6>
           <p class="card-text"><%= entry["description"] %></p>
+          <% if entry.uploaded_image.attached? %>
+            <%= image_tag url_for(entry.uploaded_image), class: "img-fluid" %>
+          <% end %>
         </div>
       </div>
     </div>
